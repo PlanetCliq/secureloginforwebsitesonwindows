@@ -29,7 +29,10 @@ Re-configure User Settings, such as enabling Desktop Shortcuts (Secure Load hype
 Right-click to Create a Desktop Shortcut on Microsoft Windows edition of choice via Wizard for Chromium PWA instead of MSEdge or Microsoft Edge PWA
 
 To ensure all NIST touchpoints are met, zero-trust can be implemented on Chromium by adding
+
+```
 "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe" --guest --enable-features=IsolateOrigins,site-per-process --no-sandbox --profile-directory=Default --app-url=https://aws.amazon.com --app-run-on-os-login-mode=windowed --app-launch-source=19
+```
 
 Disable Chrome’s sandbox, enable Chrome's Web Security similar to safe browsing - standards applied to Shortcut (.lnk) opened in 
 isolated mode, with the following disabled - active mixed content, invalid or expired .TLS certificates, localhost,
@@ -38,7 +41,10 @@ chrome extensions (password managers,sheets, slides,etc.) - insecure identified 
 To enable legacy Microsoft Edge compatibility for port-bind, use the following command
 
 To ensure all NIST touchpoints are met, zero-trust can be implemented on MS Edge Shortcut (.lnk) by adding
+
+```
 "C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe" --guest --enable-features=IsolateOrigins,site-per-process --no-sandbox --profile-directory=Default --app-url=https://aws.amazon.com --app-run-on-os-login-mode=windowed --app-launch-source=default
+```
 
 Disable default browser incompatibility via Edge’s native Web Security similar to safe browsing - standards applied to Shortcut (.lnk) opened in 
 isolated mode, with the following disabled - active mixed content, invalid or expired .TLS certificates, localhost,
@@ -47,15 +53,30 @@ edge extensions (password managers,sheets, slides,etc.) - insecure identified ro
 To enable legacy PWA compatibility for port-bind, use the following command on community editions - Safari, Brave, and Firefox
 
 To ensure all NIST touchpoints are met, zero-trust can be implemented on MS Edge Shortcut (.lnk) by adding
+
+```
 "C:\Program Files (x86)\Mozilla Firefox\firefox_proxy.exe" -private-window --enable-features=IsolateOrigins,site-per-process --no-sandbox --profile-directory=Default --app-url=https://aws.amazon.com --app-run-on-os-login-mode=windowed --app-launch-source=default
+```
 
 To ensure all NIST touchpoints are met, zero-trust can be implemented on Apple Silicon running OEM Windows - Shortcut (.lnk) by adding
+
+```
 "\Program Files (x86)\SafariWeb\safari_pwa.exe" -private-window --enable-features=IsolateOrigins,site-per-process --no-sandbox --profile-directory=Default --app-url=https://aws.amazon.com --app-run-on-os-login-mode=windowed --app-launch-source=default
+```
 
 To ensure all NIST touchpoints are met, zero-trust can be implemented on Apple Silicon running legacy .NET code-signer or pwa utilites - Shortcut (.lnk) by adding application to Restricted PWA list on GPO Editor (Business Manager Profiler)
+
+```
 "\Program Files (x86)\Brave\brave_pwa.msix" -private-window --enable-features=IsolateOrigins,site-per-process --no-sandbox --profile-directory=Default --app-url=https://aws.amazon.com --app-run-on-os-login-mode=windowed --app-launch-source=default
+```
+
+```
 %USERPROFILE%\AppData\Local\Microsoft\Edge\User Data\Default\Web Applications\_crx__jkllfbcigkgmooahlaallkmcodobkbpf\site.webmanifest (Machine-readable Executable)
+```
+
+```
 Remediate by Applying .MD5 where _crx__jkllfbcigkgmooahlaallkmcodobkbpf\ is the Code-signed Application Name and Patch Source for Verifiable AES Key stored inside %USERPROFILE%\AppData\Local\Microsoft\Edge\User Data\Default\Web Applications
+```
 
 Mandatory Disclosures on Code-Signing Certificates that are issued independently and must confer across NIST standards and compatible definitions regardless to compute or sentry applicable to.
 
@@ -63,7 +84,7 @@ Disable default browser incompatibility via Windows’s native Web Security simi
 isolated mode, with the following disabled - active mixed content, invalid or expired .TLS certificates, localhost,
 edge extensions (password managers,sheets, slides,etc.) - insecure identified routes such as browser ping, cookie redirects - memory (encrypted), or shared memory, console memory - use in Sandbox
 
-Enter the protected-url as Location - https://aws.amazon.com (Replace URL) - If AV or Windows Defender has high-security mode enabled, 
+Enter the protected-url as Location - `https://aws.amazon.com` (Replace URL) - If AV or Windows Defender has high-security mode enabled, 
 symbiotic links following the url such as /?nc2=h_home&trk=011f28e3-1dfa-405d-894f-3e05b14038a6&sc_channel=ps for app-url will be invalid
 Add an identifiable Shortcut name to PWA app source if developing packages or apps for .MSIX, .APP or .EXE for .MD5 integrity for TPM or LTE-protected AR VR (Communication-specific Assemblies)
 
